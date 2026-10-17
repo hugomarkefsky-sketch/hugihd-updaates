@@ -1,0 +1,143 @@
+@font-face { font-family: "Pixelify Sans"; font-weight: 400; font-display: swap; src: url(fonts/pixelify-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Pixelify Sans"; font-weight: 600; font-display: swap; src: url(fonts/pixelify-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Pixelify Sans"; font-weight: 700; font-display: swap; src: url(fonts/pixelify-sans-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+
+:root {
+  --night: #081A33;      /* Nachthimmel */
+  --deep: #0E2A47;       /* Shop-Blau aus dem Spiel */
+  --hugi: #3AA0FF;       /* Hugi-Blau */
+  --coin: #FFC83D;       /* Hugi-Coin-Gold */
+  --grass: #4E9A2E;      /* Minecraft-Knopf */
+  --ink: #E8F1F8;
+  --ink-2: rgba(232, 241, 248, .74);
+  --ink-3: rgba(232, 241, 248, .5);
+  --pixel: "Pixelify Sans", ui-monospace, monospace;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --ed: #FF6A1A;         /* Farbe der gerade gezeigten Edition */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--ink); font: 400 17px/1.6 var(--body);
+  background-color: var(--night);
+  /* Raster wie im Shop des Spiels */
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    radial-gradient(ellipse 70% 55% at 75% 18%, rgba(58,160,255,.16), transparent 70%);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+}
+a { color: var(--hugi); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--coin); outline-offset: 3px; }
+img { image-rendering: pixelated; }
+
+/* ---------- Kopf ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1180px; margin: 0 auto; padding: 18px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 600 18px/1 var(--pixel); }
+.top nav { display: flex; gap: 22px; }
+.top nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; }
+.top nav a:hover { color: var(--ink); }
+
+main { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; padding: 40px 0 72px; }
+.wordmark { margin: 0 0 22px; font: 700 clamp(56px, 9vw, 120px)/.86 var(--pixel); letter-spacing: -.01em; }
+.wordmark span { display: block; }
+.wordmark span:first-child { color: var(--ink); text-shadow: 0 6px 0 #04101F; }
+.wordmark span:last-child { color: var(--hugi); text-shadow: 0 6px 0 #0A3A70; }
+.lead { max-width: 46ch; margin: 0 0 32px; color: var(--ink-2); font-size: 19px; }
+
+/* Minecraft-Knopf (wie im Launcher) */
+.mc-btn {
+  --face: #7A8089; --hi: rgba(255,255,255,.38); --lo: rgba(0,0,0,.42);
+  display: inline-flex; align-items: center; gap: 12px; border: 0; cursor: pointer; text-decoration: none;
+  font: 600 17px/1 var(--pixel); color: #fff; letter-spacing: .02em;
+  padding: 14px 22px 16px; background: var(--face);
+  box-shadow: inset 3px 3px 0 var(--hi), inset -3px -4px 0 var(--lo), 0 0 0 3px #0B1726;
+  transition: transform .08s, filter .12s;
+}
+.mc-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.mc-btn:active { transform: translateY(2px); box-shadow: inset 3px 3px 0 var(--lo), inset -3px -3px 0 var(--hi), 0 0 0 3px #0B1726; }
+.mc-grass { --face: var(--grass); }
+.mc-btn.big { font-size: 22px; padding: 20px 30px 23px; }
+.mc-btn .os { width: 22px; height: 22px; flex: none; }
+.dl-meta { margin: 16px 0 4px; color: var(--ink-3); font-size: 14px; }
+.dl-other { margin: 0; font-size: 14px; color: var(--ink-3); }
+.dl-other a { margin-right: 14px; }
+
+/* Vitrine mit den Spezial-Editionen – das eine auffällige Element der Seite */
+.showcase { margin: 0; }
+.stage {
+  position: relative; aspect-ratio: 1.12; overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--ed) 30%, transparent), transparent 62%), #050D1A;
+  box-shadow: inset 0 0 0 3px #0B1726, inset 0 0 0 6px color-mix(in srgb, var(--ed) 55%, #0B1726);
+  transition: background .5s;
+}
+.stage img { position: absolute; image-rendering: auto; }
+.sc-cape { left: 50%; top: 30%; width: 25%; transform: translateX(-50%); image-rendering: pixelated; box-shadow: 0 0 40px color-mix(in srgb, var(--ed) 45%, transparent); }
+.sc-wings { left: 4%; top: 10%; width: 92%; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--ed) 60%, transparent)); }
+.sc-shield { right: 6%; bottom: 4%; width: 30%; filter: drop-shadow(0 0 14px color-mix(in srgb, var(--ed) 55%, transparent)); }
+figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+.sc-name { font: 600 18px/1.2 var(--pixel); color: var(--ed); transition: color .4s; }
+.sc-pick { display: flex; gap: 10px; }
+.sc-pick button { width: 30px; height: 30px; border: 0; cursor: pointer; background: var(--c); box-shadow: inset -3px -3px 0 rgba(0,0,0,.35), 0 0 0 3px #0B1726; }
+.sc-pick button[aria-pressed="true"] { box-shadow: inset -3px -3px 0 rgba(0,0,0,.35), 0 0 0 3px #fff, 0 0 16px var(--c); }
+
+/* ---------- Abschnitte ---------- */
+section { padding: 64px 0; }
+h2 { margin: 0 0 32px; font: 700 clamp(30px, 4vw, 44px)/1.05 var(--pixel); }
+h3 { margin: 0 0 8px; font: 600 21px/1.2 var(--pixel); }
+p { margin: 0 0 12px; }
+
+.steps ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; counter-reset: step; }
+.steps li { counter-increment: step; position: relative; padding-top: 64px; color: var(--ink-2); }
+.steps li::before {
+  content: counter(step); position: absolute; top: 0; left: 0; width: 48px; height: 48px; display: grid; place-items: center;
+  font: 700 26px/1 var(--pixel); color: #0B1726; background: var(--coin);
+  box-shadow: inset 3px 3px 0 rgba(255,255,255,.45), inset -3px -4px 0 rgba(0,0,0,.3);
+}
+.steps h3 { color: var(--ink); }
+.steps em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+.inside { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; }
+.inside h2 { grid-column: 1 / -1; margin-bottom: 0; }
+.feature { color: var(--ink-2); }
+.feature h3 { color: var(--ink); }
+.feature.wide { grid-column: 1 / -1; padding: 28px 32px; background: var(--deep); box-shadow: inset 4px 0 0 var(--ed); }
+.feature.wide p { max-width: 70ch; margin: 0; }
+.pets { width: 100%; height: auto; margin-bottom: 14px; image-rendering: auto; }
+.ranks { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.ranks img { height: 18px; width: auto; }
+.mods { display: flex; flex-wrap: wrap; gap: 6px 8px; list-style: none; margin: 4px 0 14px; padding: 0; }
+.mods li { padding: 3px 9px; font-size: 14px; color: var(--ink); background: rgba(58,160,255,.14); }
+
+.help { max-width: 760px; }
+details { border-top: 2px solid rgba(255,255,255,.08); }
+details:last-of-type { border-bottom: 2px solid rgba(255,255,255,.08); }
+summary { cursor: pointer; list-style: none; padding: 18px 0; font: 600 19px/1.3 var(--pixel); display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--hugi); font-size: 24px; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { color: var(--ink-2); padding-bottom: 8px; max-width: 64ch; }
+
+footer { max-width: 1180px; margin: 0 auto; padding: 40px 24px 56px; color: var(--ink-3); font-size: 14px; }
+footer .legal { max-width: 60ch; }
+
+/* ---------- schmal ---------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 16px; }
+  .steps ol, .inside { grid-template-columns: 1fr; }
+  .top nav { display: none; }
+}
+@media (max-width: 480px) {
+  main, .top, footer { padding-left: 16px; padding-right: 16px; }
+  .mc-btn.big { font-size: 18px; padding: 16px 20px 19px; width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .mc-btn, .stage, .sc-name { transition: none; }
+}
