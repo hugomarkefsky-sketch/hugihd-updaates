@@ -49,6 +49,20 @@
     $('dl-other').innerHTML = links.filter(l => l.asset).map(l => `<a href="${l.asset.browser_download_url}">${l.label}</a>`).join('')
   }
 
+  /** "Neu im Client": die letzten Versionen mit ihren Änderungen aus GitHub (Text der Releases) */
+  function news (rels) {
+    const list = $('news-list')
+    const esc = t => t.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+    const items = rels.slice(0, 4).map(rel => {
+      const v = String(rel.tag_name || '').replace(/^v/, '')
+      const lines = String(rel.body || '').split('\n').map(l => l.trim()).filter(l => /^[-*] /.test(l)).map(l => l.slice(2)).slice(0, 4)
+      if (!lines.length) return ''
+      const date = rel.published_at ? new Date(rel.published_at).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
+      return `<article><h3>Version ${esc(v)}</h3>${date ? `<p class="news-date">${esc(date)}</p>` : ''}<ul>${lines.map(l => `<li>${esc(l)}</li>`).join('')}</ul></article>`
+    }).join('')
+    if (items) list.innerHTML = items
+  }
+
   async function run () {
     if (!repo) {
       $('dl-meta').textContent = 'Download-Quelle fehlt (config.js).'
@@ -78,6 +92,7 @@
       return null
     }
     const version = String(rels[0].tag_name || '').replace(/^v/, '')
+    news(rels)
     const win = find(/Setup.*\.exe$/i)
     const arm = find(/arm64\.dmg$/i)
     const intel = find(/x64\.dmg$/i) || find(/\.dmg$/i)
@@ -100,15 +115,22 @@
 
   // Vitrine: Edition wählen
   const NAMES = { smaragdflamme: 'Smaragdflamme', hoellendrache: 'Höllendrache', frostkristall: 'Frostkristall', leere: 'Leere' }
+  const DESC = {
+    hoellendrache: 'Gepanzerter Drachenflügel mit goldenem Zier-Knochen und glühender Lava-Ader, Drachenschild mit Hörnern und Magma-Kugel, Umhang mit Lava-Rissen und einem Drachenauge, das blinzelt.',
+    smaragdflamme: 'Flügel aus gezackten grünen Feuerzacken mit goldenem Rankenast, blattförmiges Smaragd-Schild mit Flamme im Inneren, Umhang mit echtem aufsteigendem Feuer.',
+    frostkristall: 'Strahlenförmige Eiskristalle statt Federn mit wanderndem Glanz, kantiges Kristallschild mit drehendem Schneekristall, Umhang aus geschliffenem Eis mit fallendem Schnee.',
+    leere: 'Großer Sternenflügel mit Unterflügel, in dem Nebel und Sterne wandern, Rundschild mit drehender Galaxie und Runenring, Umhang mit Portal und Sternenstaub.'
+  }
   document.querySelectorAll('.sc-pick button').forEach(b => {
     b.addEventListener('click', () => {
       const ed = b.dataset.ed
       document.querySelectorAll('.sc-pick button').forEach(x => x.setAttribute('aria-pressed', String(x === b)))
       document.documentElement.style.setProperty('--ed', getComputedStyle(b).getPropertyValue('--c'))
-      $('sc-wings').src = `img/wings-${ed}.png`
-      $('sc-cape').src = `img/cape-${ed}.png`
-      $('sc-shield').src = `img/shield-${ed}.png`
+      $('sc-wings').src = `img/wings-${ed}.webp`
+      $('sc-cape').src = `img/cape-${ed}.webp`
+      $('sc-shield').src = `img/shield-${ed}.webp`
       $('sc-name').textContent = `Spezial-Edition ${NAMES[ed]}`
+      $('sc-desc').textContent = DESC[ed]
     })
   })
 

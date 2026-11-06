@@ -78,13 +78,14 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
   transition: background .5s;
 }
 .stage img { position: absolute; image-rendering: auto; }
-.sc-cape { left: 50%; top: 30%; width: 25%; transform: translateX(-50%); image-rendering: pixelated; box-shadow: 0 0 40px color-mix(in srgb, var(--ed) 45%, transparent); }
+.sc-cape { left: 50%; top: 28%; width: 24%; transform: translateX(-50%); border-radius: 2px; box-shadow: 0 0 40px color-mix(in srgb, var(--ed) 45%, transparent); }
 .sc-wings { left: 4%; top: 10%; width: 92%; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--ed) 60%, transparent)); }
 .sc-shield { right: 6%; bottom: 4%; width: 30%; filter: drop-shadow(0 0 14px color-mix(in srgb, var(--ed) 55%, transparent)); }
 figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
 .sc-name { font: 600 18px/1.2 var(--pixel); color: var(--ed); transition: color .4s; }
 .sc-pick { display: flex; gap: 10px; }
 .sc-pick button { width: 30px; height: 30px; border: 0; cursor: pointer; background: var(--c); box-shadow: inset -3px -3px 0 rgba(0,0,0,.35), 0 0 0 3px #0B1726; }
+.sc-desc { margin: 10px 0 0; max-width: 60ch; color: var(--ink-2); font-size: 15px; min-height: 4.8em; }
 .sc-pick button[aria-pressed="true"] { box-shadow: inset -3px -3px 0 rgba(0,0,0,.35), 0 0 0 3px #fff, 0 0 16px var(--c); }
 
 /* ---------- Abschnitte ---------- */
@@ -126,6 +127,14 @@ details p { color: var(--ink-2); padding-bottom: 8px; max-width: 64ch; }
 
 footer { max-width: 1180px; margin: 0 auto; padding: 40px 24px 56px; color: var(--ink-3); font-size: 14px; }
 footer .legal { max-width: 60ch; }
+
+/* Neu im Client */
+.news-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px 36px; }
+.news-list article { color: var(--ink-2); }
+.news-list h3 { color: var(--ink); margin-bottom: 2px; }
+.news-date { margin: 0 0 8px; color: var(--ink-3); font-size: 14px; }
+.news-list ul { margin: 8px 0 0; padding-left: 18px; }
+.news-list li { margin-bottom: 6px; font-size: 15px; }
 
 /* ---------- schmal ---------- */
 @media (max-width: 900px) {

@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hugi_HD Client</title>
-  <meta name="description" content="Der Hugi_HD Client für Minecraft: animierte Flügel, eigene Begleiter, Ränge und eingebaute Mods. Installationsdatei herunterladen, installieren, spielen.">
+  <meta name="description" content="Der Hugi_HD Client für Minecraft: animierte HD-Flügel, Umhänge und Schilde, eigene Begleiter, Ränge, Shader und eingebaute Mods. Installationsdatei herunterladen, installieren, spielen.">
   <meta property="og:title" content="Hugi_HD Client">
   <meta property="og:description" content="Minecraft mit Flügeln, Begleitern und Rängen – ein Download, dann spielen.">
-  <meta property="og:image" content="img/wings-hoellendrache.png">
+  <meta property="og:image" content="img/og-hoellendrache.png">
   <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,6 +15,7 @@
   <header class="top">
     <a class="brand" href="#"><img src="img/icon.png" alt="" width="28" height="28">Hugi_HD Client</a>
     <nav>
+      <a href="#neu">Neu</a>
       <a href="#so-gehts">So geht's</a>
       <a href="#inhalt">Was drin ist</a>
       <a href="#hilfe">Hilfe</a>
@@ -25,7 +26,7 @@
     <section class="hero">
       <div class="hero-text">
         <h1 class="wordmark"><span>Hugi_HD</span><span>Client</span></h1>
-        <p class="lead">Minecraft mit animierten Flügeln, eigenen Begleitern und Rängen – sichtbar für alle mit dem Hugi_HD Client, auf jedem Server. Installationsdatei laden, doppelklicken, spielen.</p>
+        <p class="lead">Minecraft mit animierten HD-Flügeln, Umhängen und Schilden, eigenen Begleitern und Rängen – sichtbar für alle mit dem Hugi_HD Client, auf jedem Server. Installationsdatei laden, doppelklicken, spielen.</p>
 
         <div class="download" id="download">
           <a class="mc-btn mc-grass big" id="dl-main" href="#">
@@ -38,9 +39,9 @@
 
       <figure class="showcase" aria-label="Spezial-Editionen">
         <div class="stage" id="stage">
-          <img class="sc-wings" id="sc-wings" src="img/wings-hoellendrache.png" alt="Animierte Flügel der Spezial-Edition">
-          <img class="sc-cape" id="sc-cape" src="img/cape-hoellendrache.png" alt="Animierter Umhang">
-          <img class="sc-shield" id="sc-shield" src="img/shield-hoellendrache.png" alt="Animiertes Schild">
+          <img class="sc-wings" id="sc-wings" src="img/wings-hoellendrache.webp" alt="Animierte Flügel der Spezial-Edition">
+          <img class="sc-cape" id="sc-cape" src="img/cape-hoellendrache.webp" alt="Animierter Umhang">
+          <img class="sc-shield" id="sc-shield" src="img/shield-hoellendrache.webp" alt="Animiertes Schild">
         </div>
         <figcaption>
           <span class="sc-name" id="sc-name">Spezial-Edition Höllendrache</span>
@@ -51,7 +52,22 @@
             <button type="button" data-ed="leere" style="--c:#B46CFF" aria-label="Leere"></button>
           </span>
         </figcaption>
+        <p class="sc-desc" id="sc-desc">Gepanzerter Drachenflügel mit goldenem Zier-Knochen und glühender Lava-Ader, Drachenschild mit Hörnern und Magma-Kugel, Umhang mit Lava-Rissen und einem Drachenauge, das blinzelt.</p>
       </figure>
+    </section>
+
+    <section class="news" id="neu">
+      <h2>Neu im Client</h2>
+      <div class="news-list" id="news-list">
+        <article>
+          <h3>Version 1.38 – Spezial-Pakete in HD</h3>
+          <ul>
+            <li>Neue HD-Umhänge, eigene Schilde und eigene Flügel für Höllendrache, Smaragdflamme, Frostkristall und Leere</li>
+            <li>Jedes Paket mit eigener Schild- und Flügelform, weichem Leucht-Schein und glatten Kanten</li>
+            <li>Spezial-Schilde jetzt auch in Minecraft 26.3 in der Hand</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="steps" id="so-gehts">
@@ -78,8 +94,8 @@
 
       <div class="feature wide">
         <div>
-          <h3>Spezial-Editionen</h3>
-          <p>Flügel mit Gelenken, die beim Fliegen richtig schlagen, dazu animierte Umhänge und Schilde, die dein Minecraft-Schild in der Hand ersetzen. Smaragdflamme, Höllendrache, Frostkristall und Leere – einzeln oder als Paket.</p>
+          <h3>Spezial-Pakete in HD</h3>
+          <p>Jedes Paket hat Flügel, Umhang und Schild in einem eigenen Stil – mit eigener Form, weichem Leuchten und Animationen in hoher Auflösung. Die Flügel haben Gelenke und schlagen beim Fliegen richtig, das Schild ersetzt dein Minecraft-Schild in der Hand. Smaragdflamme, Höllendrache, Frostkristall und Leere – einzeln oder als Paket.</p>
         </div>
       </div>
 
@@ -110,13 +126,33 @@
       </div>
 
       <div class="feature">
-        <h3>Emotes und Nametags</h3>
-        <p>Emote-Rad mit Taste N, eigene Emotes im Launcher bauen, animierte Namen von Regenbogen bis Höllenfeuer.</p>
+        <h3>Shader mit einem Klick</h3>
+        <p>Der Hugi_HD Himmel mit Sonnenuntergang, Sternen und Milchstraße ist schon an. Lieber Complementary, BSL, MakeUp oder Photon? Ein Klick – Iris und Sodium kommen automatisch dazu.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Deine Welt, deine Regeln</h3>
+        <p>Im Hugi_HD-Menü stellst du in deiner eigenen Welt Inventar behalten, Tageszeit, Wetter, Monster und Fallschaden per Schalter ein – ohne Cheats.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Freunde und Geschenke</h3>
+        <p>Sieh, welcher Freund auf welchem Server spielt, und komm mit einem Klick dazu. Shop-Sachen kannst du verschenken – mit kurzer Nachricht.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Saison-Events</h3>
+        <p>Spukzeit, Winterzauber, Blütezeit: Jede Jahreszeit hat ein eigenes Event – Launcher, Hauptmenü und Shop im Spiel bekommen die Farben der Jahreszeit, dazu Belohnungen, die es nur dann gibt.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Emotes, Nametags und Skins</h3>
+        <p>Emote-Rad mit Taste N und ein Emote-Editor mit 3D-Vorschau für eigene Emotes. Dazu animierte Namen von Regenbogen bis Höllenfeuer und eine Skin-Bibliothek zum Wechseln mit einem Klick.</p>
       </div>
 
       <div class="feature">
         <h3>Deine Mods, deine Versionen</h3>
-        <p>Profile für Minecraft 1.20.1 bis 26.3 mit Fabric, Quilt, NeoForge oder Forge. Modpacks aus Modrinth, CurseForge oder Prism übernimmst du mit einem Klick.</p>
+        <p>Profile für Minecraft 1.20.1, 1.21.1, 1.21.4, 1.21.11 und 26.3 mit Fabric, Quilt, NeoForge oder Forge. Modpacks und Tastenbelegung aus Lunar, Badlion, Feather, LabyMod, Modrinth, CurseForge oder Prism übernimmst du mit einem Klick.</p>
       </div>
     </section>
 
@@ -133,6 +169,10 @@
       <details>
         <summary>Sehen andere Spieler meine Flügel?</summary>
         <p>Alle, die den Hugi_HD Client nutzen, sehen deine Flügel, Begleiter, Umhänge und Schilde – auf jedem Server. Ohne Client sieht man nur das normale Minecraft.</p>
+      </details>
+      <details>
+        <summary>Läuft der Client mit meinem Rechner?</summary>
+        <p>Ja, wenn Minecraft läuft. Windows 10/11 und macOS (Apple-Chip oder Intel). Für Shader brauchst du eine etwas stärkere Grafikkarte – der Hugi_HD Himmel kostet dagegen kaum FPS.</p>
       </details>
       <details>
         <summary>Kostet das etwas?</summary>
