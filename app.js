@@ -45,6 +45,19 @@
     $('dl-meta').textContent = asset ? `Version ${asset.version}, ${mb(asset.size)}` : `Version ${version}`
   }
 
+  /** Hugi Hub (zweites Programm): Download-Links zur neuesten hub-Version */
+  function hubLinks (all) {
+    const box = $('dl-hub')
+    if (!box) return
+    const hub = (all || []).find(x => !x.draft && !x.prerelease && /^hub-v/i.test(x.tag_name || ''))
+    if (!hub) return
+    const a = (re) => (hub.assets || []).find(x => re.test(x.name))
+    const links = [[a(/Installer.*\.exe$/i), 'Windows'], [a(/mac-arm64\.zip$/i), 'Mac (Apple-Chip)'], [a(/mac-x64\.zip$/i), 'Mac (Intel)']].filter(l => l[0])
+    if (!links.length) return
+    box.innerHTML = 'Dazu: <strong>Hugi Hub</strong> – News, ältere Versionen, Varianten und Status: ' + links.map(([x, label]) => `<a href="${x.browser_download_url}">${label}</a>`).join(' · ')
+    box.hidden = false
+  }
+
   function other (links) {
     $('dl-other').innerHTML = links.filter(l => l.asset).map(l => `<a href="${l.asset.browser_download_url}">${l.label}</a>`).join('')
   }
@@ -72,7 +85,10 @@
     try {
       const r = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=15`, { headers: { Accept: 'application/vnd.github+json' } })
       if (!r.ok) throw new Error(r.status)
-      rels = (await r.json()).filter(x => !x.draft && !x.prerelease)
+      const all = await r.json()
+      hubLinks(all)
+      // hub-v… = Hugi Hub (eigenes Programm) – nicht als Client-Version zeigen
+      rels = all.filter(x => !x.draft && !x.prerelease && !/^hub-/i.test(x.tag_name || ''))
     } catch (e) {
       $('dl-main').href = releasesPage
       $('dl-meta').textContent = 'Die Versionsliste lässt sich gerade nicht laden – der Knopf führt zu GitHub.'

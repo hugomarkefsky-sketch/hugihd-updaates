@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hugomarkefsky-sketch.github.io/hugihd-updaates/sitemap.xml
