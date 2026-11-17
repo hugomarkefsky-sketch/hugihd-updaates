@@ -1,0 +1,33 @@
+Hugi_HD Client – Lizenz
+=======================
+
+Copyright (c) 2026 Hugo Markefsky (Hugi_HD). Alle Rechte vorbehalten.
+
+Dies ist KEINE Open-Source-Software. Der Hugi_HD Client (Launcher, Mod,
+Onlinedienst, Hugi Hub, Shop-Studio und alle zugehörigen Dateien) ist ein
+geschlossenes Programm. Der Quelltext wird nicht veröffentlicht.
+
+Du darfst den Hugi_HD Client kostenlos herunterladen, installieren und zum
+Spielen benutzen. Alles Weitere regeln die Nutzungsregeln (NUTZUNGSREGELN.txt),
+die zu dieser Lizenz gehören.
+
+Ohne ausdrückliche schriftliche Erlaubnis von Hugi_HD ist es insbesondere
+nicht erlaubt:
+- den Client oder Teile davon zu entschlüsseln, zu dekompilieren,
+  zurückzuentwickeln (Reverse Engineering) oder den Programmcode auf andere
+  Weise lesbar zu machen;
+- den Client oder Teile davon zu verändern, nachzubauen, umzubenennen oder
+  unter eigenem Namen weiterzugeben;
+- den Client oder Teile davon weiterzuverbreiten, zu verkaufen oder zu
+  vermieten;
+- den Onlinedienst, den Shop oder die Hugi-Coins zu manipulieren oder
+  nachzuahmen.
+
+Marken, Namen, Logos, Grafiken, Modelle und Texturen des Hugi_HD Clients
+gehören Hugi_HD und dürfen nicht ohne Erlaubnis verwendet werden.
+
+Das Programm wird „wie es ist“ bereitgestellt, ohne jede Gewähr. Die Nutzung
+erfolgt auf eigene Verantwortung.
+
+Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt
+oder mit ihnen verbunden. Minecraft ist eine Marke von Mojang AB.

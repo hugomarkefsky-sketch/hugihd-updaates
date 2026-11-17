@@ -1,0 +1,44 @@
+Hugi_HD Client – Nutzungsregeln
+===============================
+
+Schön, dass du den Hugi_HD Client benutzt! Damit alle Spaß haben und alles
+fair bleibt, gelten ein paar einfache Regeln. Wenn du den Client benutzt,
+bist du mit diesen Regeln einverstanden.
+
+1. Kostenlos und privat
+   Der Hugi_HD Client ist kostenlos. Du darfst ihn für dich zum Spielen
+   benutzen. Hugi-Coins sind Spielgeld und lassen sich nicht mit echtem Geld
+   kaufen oder in echtes Geld tauschen.
+
+2. Fair bleiben
+   Benutze den Client nicht zum Betrügen (Cheats, Hacks) auf Servern, die das
+   verbieten. Was auf einem Server erlaubt ist, entscheidet der Server. Für
+   Sperren (Bans) auf fremden Servern ist Hugi_HD nicht verantwortlich.
+
+3. Nichts kaputt machen
+   Du darfst den Client, den Onlinedienst, den Shop oder die Coins nicht
+   manipulieren, überlisten oder nachbauen. Du darfst den Client nicht
+   entschlüsseln, zurückentwickeln (Reverse Engineering), verändern oder unter
+   eigenem Namen weitergeben (siehe LICENSE.txt).
+
+4. Account und Konten
+   Zum Spielen brauchst du Minecraft: Java Edition mit einem Microsoft-Konto.
+   Geh sorgsam mit deinen Zugangsdaten um. Gib deine Schlüssel und Konten nicht
+   weiter.
+
+5. Updates
+   Der Client aktualisiert sich selbst, damit er sicher und aktuell bleibt.
+
+6. Keine Garantie
+   Der Client wird „wie er ist“ bereitgestellt. Hugi_HD gibt keine Garantie,
+   dass alles immer fehlerfrei läuft, und haftet nicht für Schäden, die aus der
+   Nutzung entstehen – soweit das gesetzlich zulässig ist.
+
+7. Regeln können sich ändern
+   Diese Nutzungsregeln können sich mit neuen Versionen ändern. Die jeweils
+   aktuelle Fassung liegt dem Client bei.
+
+Fragen? Komm auf den Hugi_HD Discord.
+
+Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt
+oder mit ihnen verbunden.
